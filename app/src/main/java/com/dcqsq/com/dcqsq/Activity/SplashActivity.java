@@ -1,7 +1,9 @@
-package com.dcqsq.com.dcqsq;
+package com.dcqsq.com.dcqsq.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.dcqsq.com.dcqsq.R;
 
 public class SplashActivity extends AppCompatActivity {
 
