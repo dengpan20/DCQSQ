@@ -9,9 +9,22 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.dcqsq.com.dcqsq.Activity.SplashActivity">
-
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_infomation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="iccid 卡号是购买电话卡后那很长一串数字最后字母不加"/>
+    <EditText
+        android:id="@+id/et_idcard"
+        android:layout_below="@id/tv_infomation"
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:hint="输入您的卡号iccid"
+        android:layout_height="48dp" />
+    <Button
+        android:id="@+id/btn_go_result"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/et_idcard"
+        android:text="去查询"/>
 </RelativeLayout>
