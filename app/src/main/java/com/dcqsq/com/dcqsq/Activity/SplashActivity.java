@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 import com.dcqsq.com.dcqsq.R;
 import com.dcqsq.com.dcqsq.base.BaseActivity;
+import com.dcqsq.com.dcqsq.constant.Constant;
+import com.dcqsq.com.dcqsq.utils.SharePreUtils;
 
 public class SplashActivity extends BaseActivity {
     private EditText et_text;
@@ -18,12 +20,15 @@ public class SplashActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         et_text = (EditText) findViewById(R.id.et_idcard);
+        String phone = (String) SharePreUtils.getParam(this, Constant.KEY_PHONE_NO, "");
+        et_text.setText(phone);
         btn_go_result = (Button) findViewById(R.id.btn_go_result);
         btn_go_result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SplashActivity.this,MainActivity.class);
                 intent.putExtra("no",et_text.getText().toString());
+                SharePreUtils.setParam(SplashActivity.this, Constant.KEY_PHONE_NO,et_text.getText().toString());
                 startActivity(intent);
             }
         });
