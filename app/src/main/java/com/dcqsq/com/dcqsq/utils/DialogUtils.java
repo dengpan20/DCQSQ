@@ -19,4 +19,12 @@ public class DialogUtils {
         pDialog.show();
         return pDialog;
     }
+    public static SweetAlertDialog showTipDialog(Context context,String text){
+        SweetAlertDialog pDialog = new SweetAlertDialog(context, SweetAlertDialog.ERROR_TYPE);
+        pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+        pDialog.setTitleText(TextUtils.isEmpty(text) ? "加载中":text);
+        pDialog.setCancelable(false);
+        pDialog.show();
+        return pDialog;
+    }
 }

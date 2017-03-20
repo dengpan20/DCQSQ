@@ -26,7 +26,8 @@ public class SplashActivity extends BaseActivity {
         btn_go_result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+//                Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this,PieChartActivity.class);
                 intent.putExtra("no",et_text.getText().toString());
                 SharePreUtils.setParam(SplashActivity.this, Constant.KEY_PHONE_NO,et_text.getText().toString());
                 startActivity(intent);
