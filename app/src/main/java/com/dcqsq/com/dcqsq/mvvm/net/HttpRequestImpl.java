@@ -1,6 +1,11 @@
 package com.dcqsq.com.dcqsq.mvvm.net;
 
+import android.support.annotation.NonNull;
+
+import com.dcqsq.com.dcqsq.mvvm.base.BaseApplication;
 import com.dcqsq.com.dcqsq.mvvm.bean.TeleNetReslut;
+import com.dcqsq.com.dcqsq.mvvm.config.Constant;
+import com.dcqsq.com.dcqsq.mvvm.utils.NetUtil;
 
 import java.util.Map;
 
@@ -19,8 +24,15 @@ public class HttpRequestImpl implements IHttpRequest {
         }
         return httpRequest;
     }
+    /**
+     * 根据网络状况获取缓存的策略
+     */
+    @NonNull
+    private String getCacheControl() {
+        return NetUtil.isConnected(BaseApplication.getContext()) ? Constant.SCACHE_CONTROL_AGE : Constant.SCACHE_CONTROL_CACHE;
+    }
     @Override
     public Observable<TeleNetReslut> getInfoByNo(Map<String,String> map) {
-        return null;
+        return RetrofitManager.createServiceFrom(AppNetService.class).getDataByNo(getCacheControl(),map);
     }
 }
