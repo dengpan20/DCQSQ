@@ -38,7 +38,7 @@ public abstract class BaseActivity <T extends ViewDataBinding,M extends BaseMode
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-        mModel.setView
+//        ／g
     }
 
     @Override
